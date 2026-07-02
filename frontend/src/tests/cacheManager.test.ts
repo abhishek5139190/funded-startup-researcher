@@ -54,6 +54,18 @@ describe('generateCacheKey', () => {
   it('is prefixed correctly', () => {
     expect(generateCacheKey(filters).startsWith(CACHE_PREFIX)).toBe(true);
   });
+
+  it('produces different keys for different company_name searches', () => {
+    const a = generateCacheKey({ ...filters, company_name: 'NimbusAI' });
+    const b = generateCacheKey({ ...filters, company_name: 'Fraudwall' });
+    expect(a).not.toBe(b);
+  });
+
+  it('treats company_name case-insensitively for cache key purposes', () => {
+    const a = generateCacheKey({ ...filters, company_name: 'NimbusAI' });
+    const b = generateCacheKey({ ...filters, company_name: 'nimbusai' });
+    expect(a).toBe(b);
+  });
 });
 
 describe('cache persistence', () => {

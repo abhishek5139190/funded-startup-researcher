@@ -22,9 +22,12 @@ export function validateFilters(body: unknown): { valid: boolean; error?: string
     if (typeof min === 'number' && typeof max === 'number') funding_min_max = [min, max];
   }
 
+  const company_name = typeof b.company_name === 'string' ? b.company_name.slice(0, 100) : undefined;
+
   return {
     valid: true,
     filters: {
+      company_name,
       sector,
       stage: stage as SearchFilters['stage'],
       news_type: news_type as SearchFilters['news_type'],

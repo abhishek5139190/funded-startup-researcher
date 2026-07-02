@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import type { SearchFilters } from '../../types';
-import { COUNTRIES, NEWS_TYPES, REGIONS, SECTORS, STAGES } from '../../data/options';
+import { COUNTRIES, NEWS_TYPES, SECTORS, STAGES } from '../../data/options';
 import { PillMultiSelect } from '../common/PillMultiSelect';
 
 interface SearchFormProps {
@@ -16,8 +16,8 @@ export function SearchForm({ filters, setFilters, onSubmit, isLoading }: SearchF
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (filters.sector.length === 0 && filters.geography.length === 0) {
-      setError('Select at least one sector or geography to search.');
+    if (!filters.company_name?.trim() && filters.sector.length === 0 && filters.geography.length === 0) {
+      setError('Enter a company name, or select at least one sector or geography to search.');
       return;
     }
     setError(null);
@@ -26,6 +26,20 @@ export function SearchForm({ filters, setFilters, onSubmit, isLoading }: SearchF
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label htmlFor="company_name" className="block text-sm font-medium text-gray-700">
+          Company Name
+        </label>
+        <input
+          id="company_name"
+          type="text"
+          value={filters.company_name ?? ''}
+          onChange={(e) => setFilters({ ...filters, company_name: e.target.value })}
+          placeholder="e.g. NimbusAI"
+          className="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        />
+      </div>
+
       <PillMultiSelect
         label="Domain / Sector"
         options={SECTORS}
@@ -57,13 +71,6 @@ export function SearchForm({ filters, setFilters, onSubmit, isLoading }: SearchF
           ))}
         </div>
       </div>
-
-      <PillMultiSelect
-        label="Geography — Region"
-        options={REGIONS}
-        selected={filters.geography}
-        onChange={(geography) => setFilters({ ...filters, geography })}
-      />
 
       <PillMultiSelect
         label="Geography — Country"

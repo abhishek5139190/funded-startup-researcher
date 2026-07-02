@@ -54,6 +54,7 @@ export interface Company {
 }
 
 export interface SearchFilters {
+  company_name?: string;
   sector: string[];
   stage: FundingStage[];
   news_type: NewsType;

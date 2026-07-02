@@ -25,8 +25,6 @@ export const NEWS_TYPES: NewsType[] = [
   'Product Launch',
 ];
 
-export const REGIONS = ['North America', 'Europe', 'Asia-Pacific', 'Other'] as const;
-
 export const COUNTRIES = [
   'US',
   'UK',

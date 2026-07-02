@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 import type { SearchFilters } from '../types';
 
 const DEFAULT_FILTERS: SearchFilters = {
+  company_name: '',
   sector: [],
   stage: [],
   news_type: 'Funding',

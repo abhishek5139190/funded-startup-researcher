@@ -14,7 +14,7 @@ function hashSeed(seed: string): number {
   return Math.abs(hash);
 }
 
-function logo(seed: string): string {
+export function logo(seed: string): string {
   const color = PALETTE[hashSeed(seed) % PALETTE.length];
   const initials = seed
     .split(/(?=[A-Z])/)
@@ -86,15 +86,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'Ledgerly closes $18M Series A',
         snippet: 'Ledgerly closes $18M Series A to expand embedded finance suite...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'Sifted',
+        url: 'https://sifted.eu',
         date: daysAgo(40),
       },
     ],
     job_postings: [{ title: 'Compliance Engineer', platform: 'Wellfound', url: '#', posted_date: daysAgo(20) }],
     created_at: daysAgo(40),
     updated_at: daysAgo(4),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://sifted.eu'],
   },
   {
     id: 'c3',
@@ -118,8 +118,8 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'VitalSense raises $65M to scale remote monitoring',
         snippet: 'VitalSense raises $65M Series C to expand into chronic care management...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'VentureBeat',
+        url: 'https://venturebeat.com',
         date: daysAgo(7),
       },
     ],
@@ -130,7 +130,7 @@ export const SEED_COMPANIES: SeedCompany[] = [
     ],
     created_at: daysAgo(7),
     updated_at: daysAgo(1),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://venturebeat.com'],
   },
   {
     id: 'c4',
@@ -154,15 +154,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'GreenGrid raises $9.5M seed round',
         snippet: 'GreenGrid raises $9.5M seed to expand battery optimization platform...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'Crunchbase News',
+        url: 'https://news.crunchbase.com',
         date: daysAgo(65),
       },
     ],
     job_postings: [],
     created_at: daysAgo(65),
     updated_at: daysAgo(6),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://news.crunchbase.com'],
   },
   {
     id: 'c5',
@@ -218,15 +218,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'GeneMap raises $30M to expand rare disease pipeline',
         snippet: 'GeneMap raises $30M Series A to expand rare disease drug discovery...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'VentureBeat',
+        url: 'https://venturebeat.com',
         date: daysAgo(50),
       },
     ],
     job_postings: [{ title: 'Computational Biologist', platform: 'LinkedIn', url: '#', posted_date: daysAgo(12) }],
     created_at: daysAgo(50),
     updated_at: daysAgo(5),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://venturebeat.com'],
   },
   {
     id: 'c7',
@@ -250,15 +250,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'Classly raises $6M seed for AI tutoring',
         snippet: 'Classly raises $6M seed round to build AI tutoring co-pilot for teachers...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'Product Hunt',
+        url: 'https://www.producthunt.com',
         date: daysAgo(90),
       },
     ],
     job_postings: [],
     created_at: daysAgo(90),
     updated_at: daysAgo(10),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://www.producthunt.com'],
   },
   {
     id: 'c8',
@@ -282,8 +282,8 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'Fraudwall raises $55M Series B',
         snippet: 'Fraudwall raises $55M Series B led by Accel to expand fraud detection platform...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'YourStory',
+        url: 'https://yourstory.com',
         date: daysAgo(12),
       },
     ],
@@ -293,7 +293,7 @@ export const SEED_COMPANIES: SeedCompany[] = [
     ],
     created_at: daysAgo(12),
     updated_at: daysAgo(2),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://yourstory.com'],
   },
   {
     id: 'c9',
@@ -317,15 +317,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'Skylark Robotics raises $21M Series A',
         snippet: 'Skylark Robotics raises $21M to scale autonomous inspection drones...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'Sifted',
+        url: 'https://sifted.eu',
         date: daysAgo(33),
       },
     ],
     job_postings: [{ title: 'Robotics Engineer', platform: 'LinkedIn', url: '#', posted_date: daysAgo(8) }],
     created_at: daysAgo(33),
     updated_at: daysAgo(3),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://sifted.eu'],
   },
   {
     id: 'c10',
@@ -349,15 +349,15 @@ export const SEED_COMPANIES: SeedCompany[] = [
       {
         title: 'Wavefront Health raises $4M seed',
         snippet: 'Wavefront Health raises $4M seed to expand predictive staffing platform...',
-        source: 'TechCrunch',
-        url: 'https://techcrunch.com',
+        source: 'Crunchbase News',
+        url: 'https://news.crunchbase.com',
         date: daysAgo(120),
       },
     ],
     job_postings: [],
     created_at: daysAgo(120),
     updated_at: daysAgo(15),
-    source_urls: ['https://techcrunch.com'],
+    source_urls: ['https://news.crunchbase.com'],
   },
 ];
 

@@ -104,7 +104,9 @@ export function CompanyDetailModal({ company, onClose }: CompanyDetailModalProps
                   {news.title}
                 </a>
                 <p className="mt-1 text-gray-500">{news.snippet}</p>
-                <p className="mt-1 text-xs text-gray-400">via {news.source}</p>
+                <span className="mt-2 inline-block rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700">
+                  {news.source}
+                </span>
               </li>
             ))}
           </ul>

@@ -45,7 +45,9 @@ export function CompanyCard({ company, onViewDetails, onSave, saved, cached, cac
       {company.recent_news[0] && (
         <div className="mt-3 rounded-lg bg-gray-50 p-3 text-sm">
           <p className="font-medium text-gray-800">📰 {company.recent_news[0].title}</p>
-          <p className="text-xs text-gray-400">via {company.recent_news[0].source}</p>
+          <span className="mt-1 inline-block rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700">
+            {company.recent_news[0].source}
+          </span>
         </div>
       )}
 

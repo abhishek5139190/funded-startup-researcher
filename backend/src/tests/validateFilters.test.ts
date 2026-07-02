@@ -35,4 +35,19 @@ describe('validateFilters', () => {
     const { filters } = validateFilters({ funding_min_max: ['a', 'b'] });
     expect(filters?.funding_min_max).toBeUndefined();
   });
+
+  it('accepts a company_name string', () => {
+    const { filters } = validateFilters({ company_name: 'NimbusAI' });
+    expect(filters?.company_name).toBe('NimbusAI');
+  });
+
+  it('truncates an overly long company_name', () => {
+    const { filters } = validateFilters({ company_name: 'a'.repeat(200) });
+    expect(filters?.company_name).toHaveLength(100);
+  });
+
+  it('ignores a non-string company_name', () => {
+    const { filters } = validateFilters({ company_name: 12345 });
+    expect(filters?.company_name).toBeUndefined();
+  });
 });

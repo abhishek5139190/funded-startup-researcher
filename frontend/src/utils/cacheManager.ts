@@ -17,6 +17,7 @@ function hashString(input: string): string {
 
 export function generateCacheKey(filters: SearchFilters): string {
   const normalized = {
+    company_name: filters.company_name?.trim().toLowerCase() ?? '',
     sector: [...filters.sector].sort(),
     stage: [...filters.stage].sort(),
     news_type: filters.news_type,
